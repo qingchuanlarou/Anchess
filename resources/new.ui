@@ -1,0 +1,2210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AN_Chess</class>
+ <widget class="QWidget" name="AN_Chess">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>744</width>
+    <height>680</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>744</width>
+    <height>680</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>744</width>
+    <height>680</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>百思不得棋解</string>
+  </property>
+  <widget class="QWidget" name="widget_board" native="true">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>320</width>
+     <height>320</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>320</width>
+     <height>320</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>320</width>
+     <height>320</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+background-color: rgb(0, 127, 127);
+color: rgb(0, 0, 0);
+font: 28pt &quot;DFYeaSong-B5&quot;;
+}
+
+QPushButton[color=&quot;Red&quot;]{background-color: rgb(200, 0, 0);}
+QPushButton[color=&quot;Blue&quot;]{background-color: rgb(0, 0, 200);}
+
+QPushButton[type=&quot;From&quot;][color=&quot;Red&quot;]{background-color: rgb(125, 0, 0)}
+QPushButton[type=&quot;From&quot;][color=&quot;Blue&quot;]{background-color: rgb(0, 0, 125);}
+
+QPushButton[type=&quot;CanTo&quot;]{background-color: rgb(0, 180, 180)}
+QPushButton[type=&quot;CanTo&quot;][color=&quot;Blue&quot;]{background-color: rgb(1, 114, 200)}
+QPushButton[type=&quot;CanTo&quot;][color=&quot;Red&quot;]{background-color: rgb(200, 97, 97)}
+</string>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <item row="2" column="0">
+     <widget class="QPushButton" name="piece_20">
+      <property name="minimumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="type" stdset="0">
+       <string/>
+      </property>
+      <property name="color" stdset="0">
+       <string>Red</string>
+      </property>
+      <property name="redpos" stdset="0">
+       <string>E3</string>
+      </property>
+      <property name="bluepos" stdset="0">
+       <string>A3</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="4">
+     <widget class="QPushButton" name="piece_24">
+      <property name="minimumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="type" stdset="0">
+       <string/>
+      </property>
+      <property name="color" stdset="0">
+       <string>Blue</string>
+      </property>
+      <property name="redpos" stdset="0">
+       <string>A3</string>
+      </property>
+      <property name="bluepos" stdset="0">
+       <string>E3</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="3">
+     <widget class="QPushButton" name="piece_03">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+      <property name="type" stdset="0">
+       <string/>
+      </property>
+      <property name="color" stdset="0">
+       <string/>
+      </property>
+      <property name="redpos" stdset="0">
+       <string>B1</string>
+      </property>
+      <property name="bluepos" stdset="0">
+       <string>D5</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QPushButton" name="piece_02">
+      <property name="minimumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="type" stdset="0">
+       <string/>
+      </property>
+      <property name="color" stdset="0">
+       <string>Red</string>
+      </property>
+      <property name="redpos" stdset="0">
+       <string>C1</string>
+      </property>
+      <property name="bluepos" stdset="0">
+       <string>C5</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QPushButton" name="piece_01">
+      <property name="minimumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="type" stdset="0">
+       <string/>
+      </property>
+      <property name="color" stdset="0">
+       <string>Red</string>
+      </property>
+      <property name="redpos" stdset="0">
+       <string>D1</string>
+      </property>
+      <property name="bluepos" stdset="0">
+       <string>B5</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="4">
+     <widget class="QPushButton" name="piece_34">
+      <property name="minimumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="type" stdset="0">
+       <string/>
+      </property>
+      <property name="color" stdset="0">
+       <string>Blue</string>
+      </property>
+      <property name="redpos" stdset="0">
+       <string>A4</string>
+      </property>
+      <property name="bluepos" stdset="0">
+       <string>E2</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="2">
+     <widget class="QPushButton" name="piece_42">
+      <property name="minimumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="type" stdset="0">
+       <string/>
+      </property>
+      <property name="color" stdset="0">
+       <string>Blue</string>
+      </property>
+      <property name="redpos" stdset="0">
+       <string>C5</string>
+      </property>
+      <property name="bluepos" stdset="0">
+       <string>C1</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QPushButton" name="piece_10">
+      <property name="minimumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="type" stdset="0">
+       <string/>
+      </property>
+      <property name="color" stdset="0">
+       <string>Red</string>
+      </property>
+      <property name="redpos" stdset="0">
+       <string>E2</string>
+      </property>
+      <property name="bluepos" stdset="0">
+       <string>A4</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="3">
+     <widget class="QPushButton" name="piece_13">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+      <property name="type" stdset="0">
+       <string/>
+      </property>
+      <property name="color" stdset="0">
+       <string/>
+      </property>
+      <property name="redpos" stdset="0">
+       <string>B2</string>
+      </property>
+      <property name="bluepos" stdset="0">
+       <string>D4</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QPushButton" name="piece_21">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+      <property name="type" stdset="0">
+       <string/>
+      </property>
+      <property name="color" stdset="0">
+       <string/>
+      </property>
+      <property name="redpos" stdset="0">
+       <string>D3</string>
+      </property>
+      <property name="bluepos" stdset="0">
+       <string>B3</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="2">
+     <widget class="QPushButton" name="piece_32">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+      <property name="type" stdset="0">
+       <string/>
+      </property>
+      <property name="color" stdset="0">
+       <string/>
+      </property>
+      <property name="redpos" stdset="0">
+       <string>C4</string>
+      </property>
+      <property name="bluepos" stdset="0">
+       <string>C2</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QPushButton" name="piece_31">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+      <property name="type" stdset="0">
+       <string/>
+      </property>
+      <property name="color" stdset="0">
+       <string/>
+      </property>
+      <property name="redpos" stdset="0">
+       <string>D4</string>
+      </property>
+      <property name="bluepos" stdset="0">
+       <string>B2</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="4">
+     <widget class="QPushButton" name="piece_44">
+      <property name="minimumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="type" stdset="0">
+       <string/>
+      </property>
+      <property name="color" stdset="0">
+       <string>Blue</string>
+      </property>
+      <property name="redpos" stdset="0">
+       <string>A5</string>
+      </property>
+      <property name="bluepos" stdset="0">
+       <string>E1</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QPushButton" name="piece_41">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+      <property name="type" stdset="0">
+       <string/>
+      </property>
+      <property name="color" stdset="0">
+       <string/>
+      </property>
+      <property name="redpos" stdset="0">
+       <string>D5</string>
+      </property>
+      <property name="bluepos" stdset="0">
+       <string>B1</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="3">
+     <widget class="QPushButton" name="piece_33">
+      <property name="minimumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="type" stdset="0">
+       <string/>
+      </property>
+      <property name="color" stdset="0">
+       <string>Blue</string>
+      </property>
+      <property name="redpos" stdset="0">
+       <string>B4</string>
+      </property>
+      <property name="bluepos" stdset="0">
+       <string>D2</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QPushButton" name="piece_30">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+      <property name="type" stdset="0">
+       <string/>
+      </property>
+      <property name="color" stdset="0">
+       <string/>
+      </property>
+      <property name="redpos" stdset="0">
+       <string>E4</string>
+      </property>
+      <property name="bluepos" stdset="0">
+       <string>A2</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="4">
+     <widget class="QPushButton" name="piece_04">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+      <property name="type" stdset="0">
+       <string/>
+      </property>
+      <property name="color" stdset="0">
+       <string/>
+      </property>
+      <property name="redpos" stdset="0">
+       <string>A1</string>
+      </property>
+      <property name="bluepos" stdset="0">
+       <string>E5</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QPushButton" name="piece_22">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+      <property name="type" stdset="0">
+       <string/>
+      </property>
+      <property name="color" stdset="0">
+       <string/>
+      </property>
+      <property name="redpos" stdset="0">
+       <string>C3</string>
+      </property>
+      <property name="bluepos" stdset="0">
+       <string>C3</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="3">
+     <widget class="QPushButton" name="piece_23">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+      <property name="type" stdset="0">
+       <string/>
+      </property>
+      <property name="color" stdset="0">
+       <string/>
+      </property>
+      <property name="redpos" stdset="0">
+       <string>B3</string>
+      </property>
+      <property name="bluepos" stdset="0">
+       <string>D3</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="3">
+     <widget class="QPushButton" name="piece_43">
+      <property name="minimumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="type" stdset="0">
+       <string/>
+      </property>
+      <property name="color" stdset="0">
+       <string>Blue</string>
+      </property>
+      <property name="redpos" stdset="0">
+       <string>B5</string>
+      </property>
+      <property name="bluepos" stdset="0">
+       <string>D1</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="4">
+     <widget class="QPushButton" name="piece_14">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+      <property name="type" stdset="0">
+       <string/>
+      </property>
+      <property name="color" stdset="0">
+       <string/>
+      </property>
+      <property name="redpos" stdset="0">
+       <string>A2</string>
+      </property>
+      <property name="bluepos" stdset="0">
+       <string>E4</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QPushButton" name="piece_12">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+      <property name="type" stdset="0">
+       <string/>
+      </property>
+      <property name="color" stdset="0">
+       <string/>
+      </property>
+      <property name="redpos" stdset="0">
+       <string>C2</string>
+      </property>
+      <property name="bluepos" stdset="0">
+       <string>C4</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QPushButton" name="piece_11">
+      <property name="minimumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="type" stdset="0">
+       <string/>
+      </property>
+      <property name="color" stdset="0">
+       <string>Red</string>
+      </property>
+      <property name="redpos" stdset="0">
+       <string>D2</string>
+      </property>
+      <property name="bluepos" stdset="0">
+       <string>B4</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QPushButton" name="piece_40">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+      <property name="type" stdset="0">
+       <string/>
+      </property>
+      <property name="color" stdset="0">
+       <string/>
+      </property>
+      <property name="redpos" stdset="0">
+       <string>E5</string>
+      </property>
+      <property name="bluepos" stdset="0">
+       <string>A1</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QPushButton" name="piece_00">
+      <property name="minimumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="type" stdset="0">
+       <string/>
+      </property>
+      <property name="color" stdset="0">
+       <string>Red</string>
+      </property>
+      <property name="redpos" stdset="0">
+       <string>E1</string>
+      </property>
+      <property name="bluepos" stdset="0">
+       <string>A5</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QTextEdit" name="textEdit_log">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>10</y>
+     <width>361</width>
+     <height>371</height>
+    </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+   <property name="html">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'SimSun'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="widget_init" native="true">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>380</y>
+     <width>351</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">.QWidget{background-color: rgb(216, 216, 216);}</string>
+   </property>
+   <widget class="QLabel" name="label_wecolor">
+    <property name="geometry">
+     <rect>
+      <x>12</x>
+      <y>38</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>我方棋子：</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox_weColor">
+    <property name="geometry">
+     <rect>
+      <x>92</x>
+      <y>40</y>
+      <width>71</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>蓝色</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>红色</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QPushButton" name="btn_init">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>80</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>初始化</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_youFirst">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>6</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>对方先走</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_diceType">
+    <property name="geometry">
+     <rect>
+      <x>12</x>
+      <y>14</y>
+      <width>72</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>骰子方式：</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox_diceType">
+    <property name="geometry">
+     <rect>
+      <x>92</x>
+      <y>10</y>
+      <width>121</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>电脑掷骰子</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>人工输入骰子数</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label_mode">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>38</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>模式：</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox_mode">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>40</y>
+      <width>101</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Simulation</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>DQN</string>
+     </property>
+    </item>
+   </widget>
+  </widget>
+  <widget class="QWidget" name="widget_running" native="true">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>520</y>
+     <width>351</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">.QWidget{background-color: rgb(216, 216, 216);}</string>
+   </property>
+   <widget class="QPushButton" name="btn_pcDice">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>161</width>
+      <height>37</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>电脑掷骰子</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_diceNum">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>60</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>骰子点数：</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinBox_diceNum">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>60</y>
+      <width>77</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="maximum">
+     <number>6</number>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_weGo">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>100</y>
+      <width>161</width>
+      <height>37</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>我方走子</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_back">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>60</y>
+      <width>121</width>
+      <height>37</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>悔棋</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QWidget" name="widget_save" native="true">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>400</y>
+     <width>362</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">.QWidget{background-color: rgb(216, 216, 216);}</string>
+   </property>
+   <widget class="QLabel" name="label_first">
+    <property name="geometry">
+     <rect>
+      <x>5</x>
+      <y>23</y>
+      <width>51</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>先手队:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_first">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>21</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_last">
+    <property name="geometry">
+     <rect>
+      <x>5</x>
+      <y>50</y>
+      <width>51</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>后手队：</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_last">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>50</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_save">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>80</y>
+      <width>90</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>保存棋谱</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox_win">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>80</y>
+      <width>81</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>先手胜</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>后手胜</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_place">
+    <property name="geometry">
+     <rect>
+      <x>195</x>
+      <y>21</y>
+      <width>141</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_first_2">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>23</y>
+      <width>41</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>地点：</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_first_3">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>50</y>
+      <width>41</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>赛事：</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_name">
+    <property name="geometry">
+     <rect>
+      <x>195</x>
+      <y>50</y>
+      <width>141</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QWidget" name="widget_state" native="true">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>520</y>
+     <width>361</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">.QWidget{background-color: rgb(216, 216, 216);}</string>
+   </property>
+   <widget class="QLabel" name="label_status">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>10</y>
+      <width>72</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>当前状态</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="textEdit_status">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>40</y>
+      <width>281</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="markdown">
+     <string/>
+    </property>
+    <property name="html">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'SimSun'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:6px; margin-bottom:6px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="btn_restart">
+   <property name="geometry">
+    <rect>
+     <x>203</x>
+     <y>460</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>新的一局</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="widget_board_blue_y" native="true">
+   <property name="geometry">
+    <rect>
+     <x>-6</x>
+     <y>20</y>
+     <width>21</width>
+     <height>321</height>
+    </rect>
+   </property>
+   <widget class="QLabel" name="label_y3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>210</y>
+      <width>21</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>2</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_y2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>150</y>
+      <width>21</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>3</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_y0">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>25</y>
+      <width>16</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>5</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_y4">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>278</y>
+      <width>21</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_y1">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>80</y>
+      <width>21</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>4</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QWidget" name="widget_board_blue_x" native="true">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>340</y>
+     <width>321</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <widget class="QLabel" name="label_xB">
+    <property name="geometry">
+     <rect>
+      <x>85</x>
+      <y>4</y>
+      <width>21</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>B</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_xC">
+    <property name="geometry">
+     <rect>
+      <x>153</x>
+      <y>4</y>
+      <width>21</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>C</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_xD">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>4</y>
+      <width>16</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>D</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_xE">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>4</y>
+      <width>21</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>E</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_xA">
+    <property name="geometry">
+     <rect>
+      <x>23</x>
+      <y>4</y>
+      <width>21</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>A</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QWidget" name="widget_board_red_x" native="true">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>-10</y>
+     <width>321</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <widget class="QLabel" name="label_x1_4">
+    <property name="geometry">
+     <rect>
+      <x>85</x>
+      <y>10</y>
+      <width>21</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>D</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_x2_4">
+    <property name="geometry">
+     <rect>
+      <x>153</x>
+      <y>10</y>
+      <width>21</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>C</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_x3_4">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>10</y>
+      <width>16</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>B</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_x4_4">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>10</y>
+      <width>21</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>A</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_x0_4">
+    <property name="geometry">
+     <rect>
+      <x>23</x>
+      <y>10</y>
+      <width>21</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>E</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QWidget" name="widget_board_red_y" native="true">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>20</y>
+     <width>21</width>
+     <height>321</height>
+    </rect>
+   </property>
+   <widget class="QLabel" name="label_y3_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>210</y>
+      <width>21</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>4</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_y2_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>150</y>
+      <width>21</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>3</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_y0_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>25</y>
+      <width>16</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_y4_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>278</y>
+      <width>21</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>5</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_y1_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>80</y>
+      <width>21</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>2</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>piece_00</sender>
+   <signal>clicked()</signal>
+   <receiver>AN_Chess</receiver>
+   <slot>piece_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>53</x>
+     <y>47</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-119</x>
+     <y>41</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>piece_01</sender>
+   <signal>clicked()</signal>
+   <receiver>AN_Chess</receiver>
+   <slot>piece_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>117</x>
+     <y>35</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-31</x>
+     <y>14</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>piece_02</sender>
+   <signal>clicked()</signal>
+   <receiver>AN_Chess</receiver>
+   <slot>piece_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>169</x>
+     <y>40</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>91</x>
+     <y>-39</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>piece_03</sender>
+   <signal>clicked()</signal>
+   <receiver>AN_Chess</receiver>
+   <slot>piece_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>244</x>
+     <y>38</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>264</x>
+     <y>-42</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>piece_04</sender>
+   <signal>clicked()</signal>
+   <receiver>AN_Chess</receiver>
+   <slot>piece_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>309</x>
+     <y>55</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>345</x>
+     <y>-20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>piece_10</sender>
+   <signal>clicked()</signal>
+   <receiver>AN_Chess</receiver>
+   <slot>piece_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>63</x>
+     <y>111</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-58</x>
+     <y>111</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>piece_11</sender>
+   <signal>clicked()</signal>
+   <receiver>AN_Chess</receiver>
+   <slot>piece_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>114</x>
+     <y>117</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-142</x>
+     <y>144</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>piece_12</sender>
+   <signal>clicked()</signal>
+   <receiver>AN_Chess</receiver>
+   <slot>piece_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>189</x>
+     <y>125</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-113</x>
+     <y>131</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>piece_13</sender>
+   <signal>clicked()</signal>
+   <receiver>AN_Chess</receiver>
+   <slot>piece_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>258</x>
+     <y>110</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-68</x>
+     <y>191</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>piece_14</sender>
+   <signal>clicked()</signal>
+   <receiver>AN_Chess</receiver>
+   <slot>piece_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>303</x>
+     <y>127</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-48</x>
+     <y>160</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>piece_20</sender>
+   <signal>clicked()</signal>
+   <receiver>AN_Chess</receiver>
+   <slot>piece_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>59</x>
+     <y>178</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-111</x>
+     <y>204</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>piece_21</sender>
+   <signal>clicked()</signal>
+   <receiver>AN_Chess</receiver>
+   <slot>piece_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>117</x>
+     <y>169</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-98</x>
+     <y>224</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>piece_22</sender>
+   <signal>clicked()</signal>
+   <receiver>AN_Chess</receiver>
+   <slot>piece_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>188</x>
+     <y>166</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-86</x>
+     <y>173</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>piece_23</sender>
+   <signal>clicked()</signal>
+   <receiver>AN_Chess</receiver>
+   <slot>piece_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>247</x>
+     <y>170</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>219</x>
+     <y>-43</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>piece_24</sender>
+   <signal>clicked()</signal>
+   <receiver>AN_Chess</receiver>
+   <slot>piece_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>317</x>
+     <y>186</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>367</x>
+     <y>-29</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>piece_30</sender>
+   <signal>clicked()</signal>
+   <receiver>AN_Chess</receiver>
+   <slot>piece_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>56</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-38</x>
+     <y>251</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>piece_31</sender>
+   <signal>clicked()</signal>
+   <receiver>AN_Chess</receiver>
+   <slot>piece_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>117</x>
+     <y>246</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-105</x>
+     <y>281</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>piece_32</sender>
+   <signal>clicked()</signal>
+   <receiver>AN_Chess</receiver>
+   <slot>piece_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>174</x>
+     <y>257</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-77</x>
+     <y>291</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>piece_33</sender>
+   <signal>clicked()</signal>
+   <receiver>AN_Chess</receiver>
+   <slot>piece_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>244</x>
+     <y>237</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-64</x>
+     <y>269</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>piece_34</sender>
+   <signal>clicked()</signal>
+   <receiver>AN_Chess</receiver>
+   <slot>piece_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>305</x>
+     <y>243</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-66</x>
+     <y>240</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>piece_40</sender>
+   <signal>clicked()</signal>
+   <receiver>AN_Chess</receiver>
+   <slot>piece_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>71</x>
+     <y>317</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-95</x>
+     <y>317</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>piece_41</sender>
+   <signal>clicked()</signal>
+   <receiver>AN_Chess</receiver>
+   <slot>piece_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>115</x>
+     <y>310</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-119</x>
+     <y>330</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>piece_42</sender>
+   <signal>clicked()</signal>
+   <receiver>AN_Chess</receiver>
+   <slot>piece_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>180</x>
+     <y>314</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-62</x>
+     <y>360</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>piece_43</sender>
+   <signal>clicked()</signal>
+   <receiver>AN_Chess</receiver>
+   <slot>piece_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>249</x>
+     <y>319</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-22</x>
+     <y>348</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>piece_44</sender>
+   <signal>clicked()</signal>
+   <receiver>AN_Chess</receiver>
+   <slot>piece_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>320</x>
+     <y>309</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-62</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_init</sender>
+   <signal>clicked()</signal>
+   <receiver>AN_Chess</receiver>
+   <slot>init_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>105</x>
+     <y>475</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-104</x>
+     <y>448</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_restart</sender>
+   <signal>clicked()</signal>
+   <receiver>AN_Chess</receiver>
+   <slot>restart_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>227</x>
+     <y>479</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-81</x>
+     <y>498</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_pcDice</sender>
+   <signal>clicked()</signal>
+   <receiver>AN_Chess</receiver>
+   <slot>dice_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>86</x>
+     <y>546</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-72</x>
+     <y>551</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_back</sender>
+   <signal>clicked()</signal>
+   <receiver>AN_Chess</receiver>
+   <slot>back_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>264</x>
+     <y>594</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-44</x>
+     <y>572</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_weGo</sender>
+   <signal>clicked()</signal>
+   <receiver>AN_Chess</receiver>
+   <slot>ai_go_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>74</x>
+     <y>643</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-118</x>
+     <y>640</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_save</sender>
+   <signal>clicked()</signal>
+   <receiver>AN_Chess</receiver>
+   <slot>save_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>533</x>
+     <y>474</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>869</x>
+     <y>471</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>piece_clicked()</slot>
+  <slot>init_clicked()</slot>
+  <slot>restart_clicked()</slot>
+  <slot>dice_clicked()</slot>
+  <slot>back_clicked()</slot>
+  <slot>ai_go_clicked()</slot>
+  <slot>save_clicked()</slot>
+ </slots>
+</ui>
